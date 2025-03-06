@@ -1,0 +1,55 @@
+services:
+  nginx:
+    container_name: ag_nginx
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports: 
+      - "80:80"
+    networks:
+      - internal
+    volumes:
+      - ./auto-guru.co.uk:/var/www/html/auto-guru.co.uk
+  php:
+    container_name: ag_php
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+    networks:
+      - internal
+    #environment:
+      #XDEBUG_MODE: debug
+      #XDEBUG_CONFIG: client_host=host.docker.internal client_port=9003
+    volumes:
+      - ./auto-guru.co.uk:/var/www/html/auto-guru.co.uk
+      - ./php/sessions:/var/cpanel/php/sessions/ea-php70
+      - ./php/logs/php.log:/var/log/fpm-php.www.log
+      - ./php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+  mysql:
+    container_name: ag_mysql
+    image: mysql:8.0
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_USER: 'ag_admin'
+      MYSQL_PASSWORD: 'ag@2025'
+      MYSQL_DATABASE: 'ag_db'
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - internal
+  phpmyadmin:
+    container_name: ag_phpmyadmin
+    image: phpmyadmin
+    networks:
+      - internal
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=ag_mysql
+      - PMA_USER=root
+networks:
+  internal:
+    driver: bridge
