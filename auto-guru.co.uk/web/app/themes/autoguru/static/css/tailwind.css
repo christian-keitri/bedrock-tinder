@@ -1,0 +1,22 @@
+@tailwind utilities;
+
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: "Nunito Sans", sans-serif;
+  --color-primary: #73b315;
+  --color-secondary: #f9f9f9;
+  --color-accent: #212121;
+}
+
+@layer base {
+  /* Your base styles */
+}
+
+@layer components {
+  /* Your component styles */
+}
+
+@layer utilities {
+  /* Your utility classes */
+}
