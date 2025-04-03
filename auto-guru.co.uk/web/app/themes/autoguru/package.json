@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "postcss static/css/tailwind.css -o style.css",
+    "build": "postcss static/css/tailwind.css -o tailwind.css",
     "start:dev": "gulp"
   },
   "keywords": [],
