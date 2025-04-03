@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "postcss static/css/tailwind.css -o style.css"
+    "build": "postcss static/css/tailwind.css -o style.css",
+    "start:dev": "gulp"
   },
   "keywords": [],
   "license": "ISC",
@@ -17,5 +18,11 @@
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",
     "tailwindcss": "^4.0.14"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sourcemaps": "^3.0.0"
   }
 }
