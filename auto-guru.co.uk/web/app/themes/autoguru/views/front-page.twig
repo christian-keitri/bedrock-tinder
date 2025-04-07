@@ -1,17 +1,33 @@
 {% extends "base.twig" %}
 {% block content %}
 
-{% include 'section/hero.twig' with { title: 'Driving the Future of Automotive Data', subtitle1: 'Fuel your automotive business with data-driven insights, efficiency, and innovation', subtitle2: 'Auto-Guru is your trusted partner for insights, growth, and innovation' } %}	
+{% include 'section/hero.twig' with { 
+    title: 'Driving the Future of Automotive Data', 
+    subtitle1: 'Fuel your automotive business with data-driven insights, efficiency, and innovation', 
+    subtitle2: 'Auto-Guru is your trusted partner for insights, growth, and innovation',
+    image: '/app/themes/autoguru/static/images/header2.jpg' 
+} %}	
 
-<div class="w-3xl h-100 bg-blue-500 flex justify-center items-center">
-    <p class="text-white">Your Content Here</p>
-</div>
-
-
-{% include 'partial/buttons/primary-button.twig' with { text: 'Learn More', url: '/about' } %}
-
-{% include 'partial/buttons/secondary-button.twig' with { text: 'Learn More', url: '/about' } %}
-
-{% include 'partial/buttons/primary-button.twig' with { text: 'Learn More', url: '/about' } %}
+{% include 'section/posts-carousel.twig' with { posts: [
+    {
+        title: 'Auto-Code, our Unique Coding Solution',
+        excerpt: 'Explore how our innovative Auto-Code techonology seamlessly integrates your datasets, enhancing efficiency and connectivity. Learn more about how we can elevate your business to the next level.',
+        image: '/app/themes/autoguru/static/images/auto-code.jpg',
+        more: 'Auto-Code',
+        url: '/auto-code',
+    }, {
+        title: 'DVLA & VOSA Data Provider',
+        excerpt: 'Discover our extensive automotive aftermarket data solutions. Explore our cutting-edge services and partnerships to elevate your business with the DVLA Bulk Data License.',
+        image: '/app/themes/autoguru/static/images/dvla.jpg',
+        more: 'DVLA Data',
+        url: '/dvla-data',
+    }, {
+        title: 'Manufacturer Vehicle Build Data',
+        excerpt: 'Unlock the full potential of Manufacturer Build Data at the VIN level to significantly improve vehicle identification accuracy.',
+        image: '/app/themes/autoguru/static/images/manufacturer.jpg',
+        more: 'Build Data',
+        url: '/biuld-data',
+    }
+] } %}
 
 {% endblock %}
