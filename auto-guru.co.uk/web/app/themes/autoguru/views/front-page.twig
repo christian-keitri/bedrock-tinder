@@ -1,12 +1,17 @@
 {% extends "base.twig" %}
 {% block content %}
-<div class=" bg-primary w-full h-100 text-center text-white flex justify-center items-center">
-Test
-</div>
+
+{% include 'section/hero.twig' with { title: 'Driving the Future of Automotive Data', subtitle1: 'Fuel your automotive business with data-driven insights, efficiency, and innovation', subtitle2: 'Auto-Guru is your trusted partner for insights, growth, and innovation' } %}	
 
 <div class="w-3xl h-100 bg-blue-500 flex justify-center items-center">
     <p class="text-white">Your Content Here</p>
 </div>
 
+
+{% include 'partial/buttons/primary-button.twig' with { text: 'Learn More', url: '/about' } %}
+
+{% include 'partial/buttons/secondary-button.twig' with { text: 'Learn More', url: '/about' } %}
+
+{% include 'partial/buttons/primary-button.twig' with { text: 'Learn More', url: '/about' } %}
 
 {% endblock %}

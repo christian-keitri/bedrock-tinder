@@ -16,7 +16,8 @@
     }
   ],
   "require": {
-    "timber/timber": "2.x-dev"
+    "timber/timber": "2.x-dev",
+    "htmlburger/carbon-fields": "^3.6"
   },
   "require-dev": {
     "automattic/wordbless": "^0.4.2",

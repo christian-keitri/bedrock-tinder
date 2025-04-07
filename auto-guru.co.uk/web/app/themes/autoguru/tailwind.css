@@ -1,6 +1,36 @@
 /*! tailwindcss v4.0.14 | MIT License | https://tailwindcss.com */
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
 .static {
   position: static;
+}
+.top-2 {
+  top: calc(var(--spacing) * 2);
+}
+.top-6 {
+  top: calc(var(--spacing) * 6);
+}
+.top-8 {
+  top: calc(var(--spacing) * 8);
+}
+.top-10 {
+  top: calc(var(--spacing) * 10);
+}
+.top-20 {
+  top: calc(var(--spacing) * 20);
+}
+.top-100 {
+  top: calc(var(--spacing) * 100);
+}
+.left-0 {
+  left: calc(var(--spacing) * 0);
+}
+.z-50 {
+  z-index: 50;
 }
 .container {
   width: 100%;
@@ -20,6 +50,21 @@
     max-width: 96rem;
   }
 }
+.mt-0 {
+  margin-top: calc(var(--spacing) * 0);
+}
+.mt-4 {
+  margin-top: calc(var(--spacing) * 4);
+}
+.mt-6 {
+  margin-top: calc(var(--spacing) * 6);
+}
+.mt-8 {
+  margin-top: calc(var(--spacing) * 8);
+}
+.mt-10 {
+  margin-top: calc(var(--spacing) * 10);
+}
 .block {
   display: block;
 }
@@ -32,29 +77,42 @@
 .h-100 {
   height: calc(var(--spacing) * 100);
 }
+.h-200 {
+  height: calc(var(--spacing) * 200);
+}
 .w-3xl {
   width: var(--container-3xl);
 }
 .w-full {
   width: 100%;
 }
-.max-w-100 {
-  max-width: calc(var(--spacing) * 100);
+.max-w-1920 {
+  max-width: calc(var(--spacing) * 1920);
 }
-.max-w-200 {
-  max-width: calc(var(--spacing) * 200);
-}
-.max-w-300 {
-  max-width: calc(var(--spacing) * 300);
-}
-.max-w-900 {
-  max-width: calc(var(--spacing) * 900);
+.flex-col {
+  flex-direction: column;
 }
 .items-center {
   align-items: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
 .justify-center {
   justify-content: center;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.border {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+}
+.border-primary {
+  border-color: var(--color-primary);
+}
+.bg-black {
+  background-color: var(--color-black);
 }
 .bg-blue-500 {
   background-color: var(--color-blue-500);
@@ -62,11 +120,103 @@
 .bg-primary {
   background-color: var(--color-primary);
 }
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.px-0 {
+  padding-inline: calc(var(--spacing) * 0);
+}
+.px-4 {
+  padding-inline: calc(var(--spacing) * 4);
+}
+.px-6 {
+  padding-inline: calc(var(--spacing) * 6);
+}
+.py-2 {
+  padding-block: calc(var(--spacing) * 2);
+}
 .text-center {
   text-align: center;
 }
+.text-3xl {
+  font-size: var(--text-3xl);
+  line-height: var(--tw-leading, var(--text-3xl--line-height));
+}
+.text-4xl {
+  font-size: var(--text-4xl);
+  line-height: var(--tw-leading, var(--text-4xl--line-height));
+}
+.text-5xl {
+  font-size: var(--text-5xl);
+  line-height: var(--tw-leading, var(--text-5xl--line-height));
+}
+.text-6xl {
+  font-size: var(--text-6xl);
+  line-height: var(--tw-leading, var(--text-6xl--line-height));
+}
+.text-8xl {
+  font-size: var(--text-8xl);
+  line-height: var(--tw-leading, var(--text-8xl--line-height));
+}
+.text-base {
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
+}
+.text-lg {
+  font-size: var(--text-lg);
+  line-height: var(--tw-leading, var(--text-lg--line-height));
+}
+.text-sm {
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+}
+.font-bold {
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+}
+.font-medium {
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+}
+.font-semibold {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.text-textColor {
+  color: var(--color-textColor);
+}
 .text-white {
   color: var(--color-white);
+}
+.hover\:border-transparent {
+  &:hover {
+    @media (hover: hover) {
+      border-color: transparent;
+    }
+  }
+}
+.hover\:bg-primary {
+  &:hover {
+    @media (hover: hover) {
+      background-color: var(--color-primary);
+    }
+  }
+}
+.hover\:text-secondary {
+  &:hover {
+    @media (hover: hover) {
+      color: var(--color-secondary);
+    }
+  }
 }
 @layer theme, base, components, utilities;
 @layer theme {
@@ -74,9 +224,29 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-blue-500: oklch(0.623 0.214 259.815);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-3xl: 48rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
     --default-font-family: "Nunito Sans", sans-serif;
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
     --default-font-variation-settings: var(
@@ -91,6 +261,7 @@
     );
     --color-primary: #73b315;
     --color-secondary: #f9f9f9;
+    --color-textColor: #f9f9f9;
     --color-accent: #212121;
   }
 }
@@ -247,4 +418,15 @@
 @layer base;
 @layer components;
 @layer utilities;
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+};
+
+
 /*# sourceMappingURL=tailwind.css.map */

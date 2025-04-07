@@ -6,6 +6,7 @@
   --default-font-family: "Nunito Sans", sans-serif;
   --color-primary: #73b315;
   --color-secondary: #f9f9f9;
+  --color-textColor: #f9f9f9;
   --color-accent: #212121;
 }
 
@@ -20,3 +21,4 @@
 @layer utilities {
   /* Your utility classes */
 };
+
