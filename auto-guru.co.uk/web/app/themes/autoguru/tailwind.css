@@ -11,9 +11,6 @@
 .inset-0 {
   inset: calc(var(--spacing) * 0);
 }
-.inset-10 {
-  inset: calc(var(--spacing) * 10);
-}
 .top-12 {
   top: calc(var(--spacing) * 12);
 }
@@ -44,9 +41,6 @@
     max-width: 96rem;
   }
 }
-.mx-4 {
-  margin-inline: calc(var(--spacing) * 4);
-}
 .my-4 {
   margin-block: calc(var(--spacing) * 4);
 }
@@ -62,9 +56,6 @@
 .mb-2 {
   margin-bottom: calc(var(--spacing) * 2);
 }
-.mb-4 {
-  margin-bottom: calc(var(--spacing) * 4);
-}
 .ml-2 {
   margin-left: calc(var(--spacing) * 2);
 }
@@ -77,6 +68,12 @@
 .hidden {
   display: none;
 }
+.h-80 {
+  height: calc(var(--spacing) * 80);
+}
+.h-90 {
+  height: calc(var(--spacing) * 90);
+}
 .h-100 {
   height: calc(var(--spacing) * 100);
 }
@@ -86,8 +83,8 @@
 .h-200 {
   height: calc(var(--spacing) * 200);
 }
-.w-1 {
-  width: calc(var(--spacing) * 1);
+.h-\[100px\] {
+  height: 100px;
 }
 .w-1\/3 {
   width: calc(1/3 * 100%);
@@ -106,20 +103,11 @@
   --tw-translate-y: 100%;
   translate: var(--tw-translate-x) var(--tw-translate-y);
 }
-.scale-75 {
-  --tw-scale-x: 75%;
-  --tw-scale-y: 75%;
-  --tw-scale-z: 75%;
-  scale: var(--tw-scale-x) var(--tw-scale-y);
-}
 .scale-150 {
   --tw-scale-x: 150%;
   --tw-scale-y: 150%;
   --tw-scale-z: 150%;
   scale: var(--tw-scale-x) var(--tw-scale-y);
-}
-.scale-\[0\.75\] {
-  scale: 0.75;
 }
 .flex-col {
   flex-direction: column;
@@ -158,15 +146,6 @@
 .bg-black {
   background-color: var(--color-black);
 }
-.bg-black\/8 {
-  background-color: color-mix(in oklab, var(--color-black) 8%, transparent);
-}
-.bg-black\/60 {
-  background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
-}
-.bg-black\/80 {
-  background-color: color-mix(in oklab, var(--color-black) 80%, transparent);
-}
 .bg-black\/90 {
   background-color: color-mix(in oklab, var(--color-black) 90%, transparent);
 }
@@ -179,15 +158,8 @@
 .bg-transparent {
   background-color: transparent;
 }
-.bg-white {
-  background-color: var(--color-white);
-}
 .bg-gradient-to-t {
   --tw-gradient-position: to top in oklab;
-  background-image: linear-gradient(var(--tw-gradient-stops));
-}
-.bg-gradient-to-tr {
-  --tw-gradient-position: to top right in oklab;
   background-image: linear-gradient(var(--tw-gradient-stops));
 }
 .from-primary {
@@ -196,11 +168,6 @@
 }
 .via-primary\/20 {
   --tw-gradient-via: color-mix(in oklab, var(--color-primary) 20%, transparent);
-  --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-via-stops);
-}
-.via-primary\/50 {
-  --tw-gradient-via: color-mix(in oklab, var(--color-primary) 50%, transparent);
   --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-via-stops);
 }
@@ -232,27 +199,14 @@
 .px-6 {
   padding-inline: calc(var(--spacing) * 6);
 }
-.px-10 {
-  padding-inline: calc(var(--spacing) * 10);
-}
-.px-20 {
-  padding-inline: calc(var(--spacing) * 20);
-}
 .px-40 {
   padding-inline: calc(var(--spacing) * 40);
-}
-.px-100 {
-  padding-inline: calc(var(--spacing) * 100);
 }
 .py-2 {
   padding-block: calc(var(--spacing) * 2);
 }
 .text-center {
   text-align: center;
-}
-.text-2xl {
-  font-size: var(--text-2xl);
-  line-height: var(--tw-leading, var(--text-2xl--line-height));
 }
 .text-3xl {
   font-size: var(--text-3xl);
@@ -274,10 +228,6 @@
   font-size: var(--text-sm);
   line-height: var(--tw-leading, var(--text-sm--line-height));
 }
-.text-xl {
-  font-size: var(--text-xl);
-  line-height: var(--tw-leading, var(--text-xl--line-height));
-}
 .font-bold {
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
@@ -293,9 +243,6 @@
 .font-semibold {
   --tw-font-weight: var(--font-weight-semibold);
   font-weight: var(--font-weight-semibold);
-}
-.text-gray-700 {
-  color: var(--color-gray-700);
 }
 .text-primary {
   color: var(--color-primary);
@@ -315,11 +262,6 @@
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-}
-.transition {
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
 }
 .transition-all {
   transition-property: all;
@@ -369,31 +311,10 @@
     }
   }
 }
-.group-hover\:bg-black {
-  &:is(:where(.group):hover *) {
-    @media (hover: hover) {
-      background-color: var(--color-black);
-    }
-  }
-}
 .group-hover\:bg-black\/40 {
   &:is(:where(.group):hover *) {
     @media (hover: hover) {
       background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
-    }
-  }
-}
-.group-hover\:text-black {
-  &:is(:where(.group):hover *) {
-    @media (hover: hover) {
-      color: var(--color-black);
-    }
-  }
-}
-.group-hover\:text-black\/80 {
-  &:is(:where(.group):hover *) {
-    @media (hover: hover) {
-      color: color-mix(in oklab, var(--color-black) 80%, transparent);
     }
   }
 }
@@ -445,7 +366,6 @@
   :root, :host {
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-gray-700: oklch(0.373 0.034 259.733);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -453,10 +373,6 @@
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
-    --text-xl: 1.25rem;
-    --text-xl--line-height: calc(1.75 / 1.25);
-    --text-2xl: 1.5rem;
-    --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;

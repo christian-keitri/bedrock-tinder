@@ -5,7 +5,8 @@
     title: 'Driving the Future of Automotive Data', 
     subtitle1: 'Fuel your automotive business with data-driven insights, efficiency, and innovation', 
     subtitle2: 'Auto-Guru is your trusted partner for insights, growth, and innovation',
-    image: '/app/themes/autoguru/static/images/header2.jpg' 
+    image: '/app/themes/autoguru/static/images/header2.jpg',
+    buttonText: 'Let\'s Work Together',
 } %}	
 
 {% include 'section/posts-carousel.twig' with { posts: [
@@ -29,5 +30,34 @@
         url: '/biuld-data',
     }
 ] } %}
+
+{% include 'section/image-action.twig' with {
+    image: '/app/themes/autoguru/static/images/readytotake.jpg',
+    title: 'Ready to take your automotive<br>business to the next level?',
+    buttonText: 'Let\'s Talk',
+} %}
+
+{% include 'section/posts-carousel.twig' with { posts: [
+    {
+        title: 'Service 1,<br>Placeholder<br>text for now',
+        excerpt: 'Explore how our innovative Auto-Code techonology seamlessly integrates your datasets, enhancing efficiency and connectivity. Learn more about how we can elevate your business to the next level.',
+        image: '/app/themes/autoguru/static/images/service1.jpg',
+        more: 'Auto-Code',
+        url: '/auto-code',
+    }, {
+        title: 'Service 2,<br>Placeholder<br>text for now',
+        excerpt: 'Discover our extensive automotive aftermarket data solutions. Explore our cutting-edge services and partnerships to elevate your business with the DVLA Bulk Data License.',
+        image: '/app/themes/autoguru/static/images/service2.jpg',
+        more: 'DVLA Data',
+        url: '/dvla-data',
+    }, {
+        title: 'Service 3,<br>Placeholder<br>text for now',
+        excerpt: 'Unlock the full potential of Manufacturer Build Data at the VIN level to significantly improve vehicle identification accuracy.',
+        image: '/app/themes/autoguru/static/images/service3.jpg',
+        more: 'Build Data',
+        url: '/biuld-data',
+    }
+] } %}
+
 
 {% endblock %}

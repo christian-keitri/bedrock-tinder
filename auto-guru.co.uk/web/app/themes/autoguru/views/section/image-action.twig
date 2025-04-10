@@ -1,0 +1,7 @@
+<div class=" bg-cover bg-center bg-no-repeat w-full h-90 text-center text-white flex flex-col justify-center items-center" style="background-image: url('{{ image }}');">
+  <h1 class="text-5xl font-bold">{{ title }}</h1>
+  <div class="mt-8">
+    {% include 'partial/buttons/primary-button.twig' with { text: buttonText, url: '/' } %} 
+  </div>
+
+</div>
