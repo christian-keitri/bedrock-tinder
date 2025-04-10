@@ -1,0 +1,38 @@
+<div class="relative w-full overflow-hidden">
+    {# Video Background #}
+    <div class="absolute inset-0 w-full h-full">
+        <video 
+            class="w-full h-full object-cover"
+            autoplay 
+            loop 
+            muted 
+            playsinline
+        >
+            <source src="{{ video }}" type="video/mp4">
+        </video>
+        {# Dark overlay for better text readability #}
+        <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+
+    {# Content #}
+    <div class="relative z-10 container px-40 py-20 text-left text-textColor">
+        <div class="max-w-xl">
+            <h2 class="text-4xl font-medium mb-4">{{ title }}</h2>
+            <p class="text-base text-grey mb-8">{{ subtitle|raw }}</p>
+            
+            <form class="flex flex-col gap-4 text-textColor">
+                <div class="flex gap-4">
+                    <input type="text" placeholder="First Name" class="flex-1 px-4 py-2 rounded-lg border border-gray-300">
+                    <input type="text" placeholder="Surname" class="flex-1 px-4 py-2 rounded-lg border border-gray-300">
+                </div>
+                <div class="flex gap-4">
+                    <input type="email" placeholder="Email Address" class="flex-1 px-4 py-2 rounded-lg border border-gray-300">
+                </div>
+                <input type="text" placeholder="Company Name" class="flex-1 px-4 py-2 rounded-lg border border-gray-300">
+                <div class="flex mt-10">
+                    <button type="submit" class="bg-primary px-6 py-2 rounded-lg font-medium">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
