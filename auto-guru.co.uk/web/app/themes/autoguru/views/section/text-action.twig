@@ -1,0 +1,7 @@
+<div class="w-full h-auto pb-20 bg-secondary flex flex-col justify-left items-left px-40">
+  <h1 class="text-5xl font-medium">{{ title }}</h1>
+  <p class="text-base text-grey mt-4 px-0">{{ subtitle }}</p>
+  <div class="mt-8">
+    {% include 'partial/buttons/primary-button.twig' with { text: buttonText, url: '/' } %} 
+  </div>
+</div>

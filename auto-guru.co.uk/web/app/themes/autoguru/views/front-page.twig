@@ -59,5 +59,31 @@
     }
 ] } %}
 
+{% include 'section/text-action.twig' with {
+    title: 'You\'re in Good Company',
+    subtitle: 'Auto-Guru provides customisable solutions to large and small businesses in<br>different markets accross the UK - why not be one of them?',
+    buttonText: 'Let\'s Get Started',
+} %}
+
+{% include 'section/image-gallery.twig' with {
+    images: [
+        '/app/themes/autoguru/static/images/bently-logo.svg',
+        '/app/themes/autoguru/static/images/bridgestone-logo.png',
+        '/app/themes/autoguru/static/images/camry-logo.png',
+        '/app/themes/autoguru/static/images/honda-logo.webp',
+        '/app/themes/autoguru/static/images/tesla-logo.jpg',
+        '/app/themes/autoguru/static/images/volvo-logo.jpg',
+        
+    ],
+} %}
+
+<div class="py-10 bg-secondary">
+</div>
+
+{% include 'section/text-action.twig' with {
+    title: 'Let our team of industry experts help<br>drive your business through data',
+    subtitle: 'The team at Auto-Guru have vast experience and knowledge relating to every aspect of data within the<br>Automotive Sector, through many years of assisting in innovation within the industry.',
+    buttonText: 'Read Our Blog',
+} %}
 
 {% endblock %}

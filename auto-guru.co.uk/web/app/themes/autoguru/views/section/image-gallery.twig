@@ -1,0 +1,51 @@
+<div class="w-full bg-secondary">
+    {# Top grey divider #}
+    <div class="w-full h-px bg-gray-200"></div>
+
+    {# Gallery container #}
+    <div class="relative w-full py-12 overflow-hidden">
+        <div class="animate-scroll flex gap-8">
+            {% for i in 1..99 %} 
+            {% for image in images %}
+                <div class="flex-none w-auto h-48 relative">
+                    <img 
+                        src="{{ image }}" 
+                        class="w-auto h-full object-cover rounded-lg"
+                    >
+                </div>
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+
+    {# Bottom grey divider #}
+    <div class="w-full h-px bg-gray-200"></div>
+</div>
+
+<style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-88.88% - 2rem));
+      }
+    }
+
+    .animate-scroll {
+      animation: scroll 30s linear infinite;
+      width: calc(300% + 6rem); /* Accounts for three sets of images plus gaps */
+    }
+
+    .animate-scroll:hover {
+      animation-play-state: paused;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
