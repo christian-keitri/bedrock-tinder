@@ -86,10 +86,34 @@
     buttonText: 'Read Our Blog',
 } %}
 
+{% include 'section/team-gallery.twig' with {
+    members: [
+        {
+            name: 'J Balvin',
+            image: '/app/themes/autoguru/static/images/jbalvin.jpg',
+            role: 'Chief Executive Officer',
+        },
+        {
+            name: 'Bad Bunny',
+            image: '/app/themes/autoguru/static/images/jbalvin.jpg',
+            role: 'Chief Executive Officer',
+        },
+        {
+            name: 'Nicki Minaj',
+            image: '/app/themes/autoguru/static/images/jbalvin.jpg',
+            role: 'Chief Executive Officer',
+        },
+    ]
+} %}
+
+
 {% include 'section/news-letter.twig' with {
     title: 'Sign up for our newsletter',
     subtitle: 'Be the first to receive updates from Auto-Guru on our latest<br>service advancements and industry updates',
     video: '/app/themes/autoguru/static/videos/newsletter-video.mp4',
+} %}
+
+{% include 'section/quick-links.twig' with {
 } %}
 
 {% endblock %}
