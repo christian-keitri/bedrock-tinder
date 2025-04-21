@@ -122,6 +122,9 @@
 .h-200 {
   height: calc(var(--spacing) * 200);
 }
+.h-\[133px\] {
+  height: 133px;
+}
 .h-auto {
   height: auto;
 }
@@ -140,6 +143,9 @@
 .w-6 {
   width: calc(var(--spacing) * 6);
 }
+.w-\[133px\] {
+  width: 133px;
+}
 .w-auto {
   width: auto;
 }
@@ -148,6 +154,12 @@
 }
 .max-w-1920 {
   max-width: calc(var(--spacing) * 1920);
+}
+.max-w-\[648px\] {
+  max-width: 648px;
+}
+.max-w-\[1920px\] {
+  max-width: 1920px;
 }
 .max-w-xl {
   max-width: var(--container-xl);
@@ -545,6 +557,21 @@
     }
   }
 }
+.sm\:w-\[150px\] {
+  @media (width >= 40rem) {
+    width: 150px;
+  }
+}
+.sm\:grid-cols-2 {
+  @media (width >= 40rem) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.md\:w-\[200px\] {
+  @media (width >= 48rem) {
+    width: 200px;
+  }
+}
 .md\:grid-cols-3 {
   @media (width >= 48rem) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -553,6 +580,11 @@
 .md\:grid-cols-5 {
   @media (width >= 48rem) {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+.md\:flex-row {
+  @media (width >= 48rem) {
+    flex-direction: row;
   }
 }
 @layer theme, base, components, utilities;
