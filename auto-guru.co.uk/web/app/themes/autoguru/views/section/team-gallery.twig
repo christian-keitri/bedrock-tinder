@@ -1,13 +1,17 @@
 <section class="bg-white py-16">
-    <div class="container mx-auto px-70">
-        <div class="flex flex-col w-full max-w-[648px] mx-auto gap-4">
+    <div class="container mx-auto px-20"> {# <div class="container mx-auto px-70"> #} {#original #}
+        <div class="flex flex-col w-full max-w-[648px] mx-auto gap-4 sm:flex-row sm:justify-center sm:items-center"> {##}
             {% for member in members %}
                 <div class="text-center">
-                    <div class="relative aspect-square mb-4">
+                    <div class="relative mb-4"> {#<div class="relative aspect-square mb-4">#}
                         <img 
                             src="{{ member.image }}" 
                             alt="{{ member.name }}"
-                            class="w-[133px] h-[133px] aspect-square object-cover mx-auto"
+                            <img 
+                              src="{{ member.image }}" 
+                              alt="{{ member.name }}"
+                              class="w-[220px] h-auto sm:w-[320px] sm:h-auto md:w-[220px] md:h-[220px] object-cover grayscale mx-auto" {##}
+
                         >
                     </div>
                     <h3 class="text-xl font-medium mb-1">{{ member.name }}</h3>
