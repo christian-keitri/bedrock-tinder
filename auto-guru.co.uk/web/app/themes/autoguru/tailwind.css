@@ -29,9 +29,6 @@
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
-.clear-both {
-  clear: both;
-}
 .container {
   width: 100%;
   @media (width >= 40rem) {
@@ -155,8 +152,14 @@
 .max-w-1920 {
   max-width: calc(var(--spacing) * 1920);
 }
+.max-w-\[100vw\] {
+  max-width: 100vw;
+}
 .max-w-\[648px\] {
   max-width: 648px;
+}
+.max-w-screen {
+  max-width: 100vw;
 }
 .max-w-xl {
   max-width: var(--container-xl);
@@ -190,9 +193,6 @@
 .flex-col {
   flex-direction: column;
 }
-.flex-row {
-  flex-direction: row;
-}
 .items-center {
   align-items: center;
 }
@@ -223,6 +223,9 @@
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -309,14 +312,8 @@
 .p-6 {
   padding: calc(var(--spacing) * 6);
 }
-.p-8 {
-  padding: calc(var(--spacing) * 8);
-}
 .px-0 {
   padding-inline: calc(var(--spacing) * 0);
-}
-.px-2 {
-  padding-inline: calc(var(--spacing) * 2);
 }
 .px-4 {
   padding-inline: calc(var(--spacing) * 4);
@@ -597,6 +594,11 @@
     justify-content: center;
   }
 }
+.sm\:overflow-x-auto {
+  @media (width >= 40rem) {
+    overflow-x: auto;
+  }
+}
 .md\:h-\[220px\] {
   @media (width >= 48rem) {
     height: 220px;
@@ -610,11 +612,6 @@
 .md\:grid-cols-5 {
   @media (width >= 48rem) {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-}
-.md\:flex-col {
-  @media (width >= 48rem) {
-    flex-direction: column;
   }
 }
 .md\:flex-row {
