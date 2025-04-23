@@ -4,16 +4,17 @@
 
     {# Gallery container #}
     <div class="relative w-full py-12 overflow-hidden">
-        <div class="animate-scroll flex gap-8">
-            {% for i in 1..99 %} 
-            {% for image in images %}
-                <div class="flex-none w-auto h-48 relative">
-                    <img 
-                        src="{{ image }}" 
-                        class="w-auto h-full object-cover rounded-lg"
-                    >
-                </div>
-            {% endfor %}
+        <div class="animate-scroll flex gap-6">
+            {% for i in 1..99 %}
+                {% for image in images %}
+                    <div class="flex-none w-48 h-48 relative">
+                        <img 
+                            src="{{ image }}" 
+                            class="w-full h-full object-contain rounded-full"
+                            alt="Gallery Logo"
+                        >
+                    </div>
+                {% endfor %}
             {% endfor %}
         </div>
     </div>
@@ -24,26 +25,51 @@
 
 <style>
     @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(calc(-88.88% - 2rem));
-      }
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-88.88% - 2rem));
+        }
     }
 
     .animate-scroll {
-      animation: scroll 30s linear infinite;
-      width: calc(300% + 6rem); /* Accounts for three sets of images plus gaps */
+        animation: scroll 30s linear infinite;
+        width: calc(300% + 6rem); /* Three loops of images + spacing */
+        display: flex;
+        gap: 1.5rem;
     }
 
     .animate-scroll:hover {
-      animation-play-state: paused;
+        animation-play-state: paused;
     }
 
+    /* Ensures logos are circular with shadow */
+    .rounded-full {
+        border-radius: 60%;
+        box-shadow: 0px 4px 6px rgba(125, 186, 0, 0.93);
+    }
+
+    /* Responsive logo sizing */
+    @media screen and (max-width: 768px) {
+        .w-48 {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .w-48 {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    /* Hide scrollbars if needed */
     .scrollbar-hide::-webkit-scrollbar {
         display: none;
     }
+
     .scrollbar-hide {
         -ms-overflow-style: none;
         scrollbar-width: none;
