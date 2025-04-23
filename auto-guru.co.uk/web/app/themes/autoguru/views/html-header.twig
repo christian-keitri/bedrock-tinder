@@ -1,17 +1,62 @@
 <!doctype html>
 <!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif]-->
 <!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js no-svg" {{ site.language_attributes }}> <!--<![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js no-svg overflow-x-hidden sm:overflow-x-auto" {{ site.language_attributes }}> <!--<![endif]-->
+
 <head>
-    <meta charset="{{ site.charset }}" />
-    <meta name="description" content="{{ site.description }}">
-    <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{ site.theme.link }}/tailwind.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="author" href="{{ site.theme.link }}/humans.txt" />
-    <link rel="pingback" href="{{ site.pingback_url }}" />
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    {{function('wp_head')}}
+  <meta charset="{{ site.charset }}" />
+  <meta name="description" content="{{ site.description }}">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="{{ site.pingback_url }}" />
+  <link rel="author" href="{{ site.theme.link }}/humans.txt" />
+
+  <!-- Site Styles -->
+  <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="{{ site.theme.link }}/tailwind.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  {{ function('wp_head') }}
+</head>
+
+<body>
+  <!-- Your body content goes here -->
+
+  {{ function('wp_footer') }}
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Swiper Initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper('.post-carousel', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        centeredSlides: true,
+        loop: true,
+        grabCursor: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            centeredSlides: false
+          },
+          1024: {
+            slidesPerView: 3,
+            centeredSlides: false
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
