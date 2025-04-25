@@ -35,19 +35,26 @@
         </div>
     </div> #}
 
-    <div class="relative z-10 flex justify-center items-center w-full px-10 py-20 text-textColor">
-    <div class="max-w-xl w-full">
-        <h2 class="text-4xl font-medium mb-4 text-center">{{ title }}</h2>
-        <p class="text-base text-grey mb-8 text-center">{{ subtitle|raw }}</p>
+    {# <div class="relative z-10 flex justify-center items-center w-full px-10 py-20 text-textColor"> #}
 
-        <form class="flex flex-col gap-4 text-textColor">
-            <input type="text" placeholder="First Name" class="w-full px-4 py-2 rounded-lg border border-gray-300">
-            <input type="text" placeholder="Surname" class="w-full px-4 py-2 rounded-lg border border-gray-300">
-            <input type="email" placeholder="Email Address" class="w-full px-4 py-2 rounded-lg border border-gray-300">
-            <input type="text" placeholder="Company Name" class="w-full px-4 py-2 rounded-lg border border-gray-300">
-            <button type="submit" class="bg-primary px-6 py-2 rounded-lg font-medium mt-6 w-full">Subscribe</button>
-        </form>
+    <div class="relative z-10 px-8 md:pl-20 md:pr-0 lg:pl-40 py-20 text-textColor flex flex-col items-center md:items-start md:justify-start md:w-[80%] lg:w-[70%]">
+    
+        <div class="max-w-xl w-full text-center md:text-left">
+            <h2 class="text-4xl font-medium mb-4">{{ title }}</h2>
+            <p class="text-base text-grey mb-8">{{ subtitle|raw }}</p>
+
+            {# Adjusted Form Layout to Align with Text Below #}
+            <form class="flex flex-col gap-4 text-textColor">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="text" placeholder="First Name" class="w-full md:flex-1 px-4 py-2 rounded-lg border border-gray-300">
+                    <input type="text" placeholder="Surname" class="w-full md:flex-1 px-4 py-2 rounded-lg border border-gray-300">
+                </div>
+                <input type="email" placeholder="Email Address" class="w-full px-4 py-2 rounded-lg border border-gray-300">
+                <input type="text" placeholder="Company Name" class="w-full px-4 py-2 rounded-lg border border-gray-300">
+                <button type="submit" class="bg-primary px-6 py-2 rounded-lg font-medium mt-6 w-full">Subscribe</button>
+            </form>
+        </div>
     </div>
-</div>
+
 
 </div>
