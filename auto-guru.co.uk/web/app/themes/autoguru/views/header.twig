@@ -1,12 +1,86 @@
-<div class="wrapper flex flex-col md:flex-row justify-between items-center bg-transparent px-4 py-2">
-	<h1 class="hdr-logo font-default text-3xl text-textColor font-bold" role="banner">
-		<a class="hdr-logo-link " href="{{site.url}}" rel="home">{{site.name}}</a>
-	</h1>
+<style>
+  #mobile-menu {
+    text-align: right;
+  }
+  #mobile-menu a {
+    display: block;
+    padding: 0.5rem 0;
+  }
+</style>
 
-	<div class="login-menu">
-		{% include 'partial/buttons/secondary-button.twig' with { text: 'Client Log In', url: '/login' } %}
-	</div>
-	{# <nav id="nav-main" class="nav-main" role="navigation">
-		{% include "menu.twig" with {'items': menu.get_items} %}
-	</nav><!-- #nav --> #}
+
+<div class="wrapper flex justify-between items-center bg-transparent px-4 py-2 relative z-50">
+
+  <!-- Logo -->
+  <h1 class="hdr-logo font-default text-xl sm:text-2xl md:text-3xl text-textColor font-bold" role="banner">
+    <a class="hdr-logo-link" href="{{ site.url }}" rel="home">{{ site.name }}</a>
+  </h1>
+
+  <!-- Right Section -->
+  <div class="flex items-center gap-4 md:gap-8 relative">
+    <div class="relative">
+      {% include 'partial/buttons/secondary-button.twig' with { text: 'Client Log In', url: '/login' } %}
+    </div>
+
+    <!-- Burger Button -->
+    <div class="block sm:hidden z-50 relative">
+      <button
+        id="menu-toggle"
+        aria-label="Toggle Menu"
+        class="text-5xl text-textColor focus:outline-none"
+        type="button"
+      >
+        &#9776;
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="hidden flex flex-col gap-0.5 absolute text-right"
+      style="
+        top: 5rem;
+        right: 0rem;
+        width: 8rem;
+        background-color: black;
+        color: white;
+        border: 1px solid #333;
+        border-radius: 0.3rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        z-index: 40;"
+    >
+      <a href="#data" class="text-right">Data</a>
+      <a href="#services" class="text-right">Services</a>
+      <a href="#news" class="text-right">News/Blog</a>
+      <a href="#faqs" class="text-right">FAQs</a>
+      <a href="#contact" class="text-right">Contact</a>
+    </div>
+  </div>
 </div>
+
+<!-- JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (!toggleButton || !mobileMenu) return;
+    toggleButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', function (event) {
+      const isClickInsideMenu = mobileMenu.contains(event.target);
+      const isClickOnToggle = toggleButton.contains(event.target);
+      if (!isClickInsideMenu && !isClickOnToggle) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+    const links = mobileMenu.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  });
+</script>
