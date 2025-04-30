@@ -9,7 +9,7 @@
                 {% for image in images %}
                     <div class="flex-none logo-wrapper">
                         <img 
-                            src="{{ image }}" 
+                            src="{{ image.url ?? image }}"
                             class="w-full h-full object-contain"
                             alt="Gallery Logo"
                         >

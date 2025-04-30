@@ -1,119 +1,33 @@
 {% extends "base.twig" %}
+
 {% block content %}
 
-{% include 'section/hero.twig' with { 
-    title: 'Driving the Future of Automotive Data', 
-    subtitle1: 'Fuel your automotive business with data-driven insights, efficiency, and innovation', 
-    subtitle2: 'Auto-Guru is your trusted partner for insights, growth, and innovation',
-    image: '/app/themes/autoguru/static/images/header2.jpg',
-    buttonText: 'Let\'s Work Together',
-} %}	
+  {% include 'section/hero.twig' with hero %}
 
-{% include 'section/posts-carousel.twig' with { posts: [
-    {
-        title: 'Auto-Code, our <br>Unique Coding <br>Solution',
-        excerpt: 'Explore how our innovative Auto-Code techonology seamlessly integrates your datasets, enhancing efficiency and connectivity. Learn more about how we can elevate your business to the next level.',
-        image: '/app/themes/autoguru/static/images/Auto-Code.jpg',
-        more: 'Auto-Code',
-        url: '/auto-code',
-    }, {
-        title: 'DVLA & <br>VOSA Data<br>Provider',
-        excerpt: 'Discover our extensive automotive aftermarket data solutions. Explore our cutting-edge services and partnerships to elevate your business with the DVLA Bulk Data License.',
-        image: '/app/themes/autoguru/static/images/DVLA-&-VOSA.jpg',
-        more: 'DVLA Data',
-        url: '/dvla-data',
-    }, {
-        title: 'Manufacturer<br>Vehicle<br>Build Data',
-        excerpt: 'Unlock the full potential of Manufacturer Build Data at the VIN level to significantly improve vehicle identification accuracy.',
-        image: '/app/themes/autoguru/static/images/Manufacturer-Vehicle-Build.jpg',
-        more: 'Build Data',
-        url: '/biuld-data',
-    }
-] } %}
+  {% include 'section/posts-carousel.twig' with { posts: carousel_posts } %}
 
-{% include 'section/image-action.twig' with {
-    image: '/app/themes/autoguru/static/images/readytotake.jpg',
-    title: 'Ready to take your automotive<br>business to the next level?',
-    buttonText: 'Let\'s Talk',
-} %}
+  {% include 'section/image-action.twig' with cta_section %}
 
-{% include 'section/posts-carousel.twig' with { posts: [
-    {
-        title: 'Service 1,<br>Placeholder<br>text for now',
-        excerpt: 'Explore how our innovative Auto-Code techonology seamlessly integrates your datasets, enhancing efficiency and connectivity. Learn more about how we can elevate your business to the next level.',
-        image: '/app/themes/autoguru/static/images/service1.jpg',
-        more: 'Auto-Code',
-        url: '/auto-code',
-    }, {
-        title: 'Service 2,<br>Placeholder<br>text for now',
-        excerpt: 'Discover our extensive automotive aftermarket data solutions. Explore our cutting-edge services and partnerships to elevate your business with the DVLA Bulk Data License.',
-        image: '/app/themes/autoguru/static/images/service2.jpg',
-        more: 'DVLA Data',
-        url: '/dvla-data',
-    }, {
-        title: 'Service 3,<br>Placeholder<br>text for now',
-        excerpt: 'Unlock the full potential of Manufacturer Build Data at the VIN level to significantly improve vehicle identification accuracy.',
-        image: '/app/themes/autoguru/static/images/service3.jpg',
-        more: 'Build Data',
-        url: '/biuld-data',
-    }
-] } %}
+  {% include 'section/posts-carousel.twig' with { posts: services } %}
 
-{% include 'section/text-action.twig' with {
-    title: 'You\'re in Good Company',
-    subtitle: 'Auto-Guru provides customisable solutions to large and small businesses in<br>different markets accross the UK - why not be one of them?',
-    buttonText: 'Let\'s Get Started',
-} %}
+  {% include 'section/text-action.twig' with text_action_company %}
 
-{% include 'section/image-gallery.twig' with {
-    images: [
-        '/app/themes/autoguru/static/images/bently-logo.svg',
-        '/app/themes/autoguru/static/images/bridgestone-logo.png',
-        '/app/themes/autoguru/static/images/camry-logo.png',
-        '/app/themes/autoguru/static/images/honda-logo.webp',
-        '/app/themes/autoguru/static/images/tesla-logo.jpg',
-        '/app/themes/autoguru/static/images/volvo-logo.jpg',
-        
-    ],
-} %}
+  {% include 'section/image-gallery.twig' with { images: gallery_images } %}
 
-<div class="py-10 bg-secondary">
-</div>
+  {% include 'section/text-action.twig' with text_action_team %}
 
-{% include 'section/text-action.twig' with {
-    title: 'Let our team of industry experts help<br>drive your business through data',
-    subtitle: 'The team at Auto-Guru have vast experience and knowledge relating to every aspect of data within the<br>Automotive Sector, through many years of assisting in innovation within the industry.',
-    buttonText: 'Read Our Blog',
-} %}
+  {% include 'section/team-gallery.twig' with { members: team_members } %}
 
-{% include 'section/team-gallery.twig' with {
-    members: [
-        {
-            name: 'J Balvin',
-            image: '/app/themes/autoguru/static/images/jbalvin.png',
-            role: 'Chief Executive Officer',
-        },
-        {
-            name: 'Bad Bunny',
-            image: '/app/themes/autoguru/static/images/badbunny.png',
-            role: 'Chief Executive Officer',
-        },
-        {
-            name: 'Nicki Minaj',
-            image: '/app/themes/autoguru/static/images/nickinminaj.png',
-            role: 'Chief Executive Officer',
-        },
-    ]
-} %}
+  {% include 'section/news-letter.twig' with newsletter %}
 
-
-{% include 'section/news-letter.twig' with {
+  {#
+  {% include 'section/news-letter.twig' with {
     title: 'Sign up for our newsletter',
     subtitle: 'Be the first to receive updates from Auto-Guru on our latest<br>service advancements and industry updates',
     video: '/app/themes/autoguru/static/videos/newsletter-video.mp4',
-} %}
+  } %}
+  #}
 
-{% include 'section/quick-links.twig' with {
-} %}
+  {% include 'section/quick-links.twig' %}
 
 {% endblock %}
