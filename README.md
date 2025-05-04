@@ -1,4 +1,4 @@
-# Website for auto-guru.co.uk
+
 
 ## Tech Stack Used
 - Wordpress + Bedrock for CMS
